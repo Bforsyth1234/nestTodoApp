@@ -1,6 +1,6 @@
 {
   "name": "NestTodoApp",
-  "app_id": "",
+  "app_id": "42681f60",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
