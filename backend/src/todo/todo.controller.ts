@@ -1,4 +1,4 @@
-import { TodoService } from './../todo.service';
+import { TodoService } from './todo.service';
 import { CreateTodoDto } from './CreateTodoDto';
 import { Controller, Get, Post, Body } from '@nestjs/common';
 
@@ -11,6 +11,6 @@ export class TodoController {
   }
   @Post()
   async create(@Body() createTodoDto: CreateTodoDto) {
-    return await this.todoService.create(createTodoDto);
+    this.todoService.create(createTodoDto);
   }
 }

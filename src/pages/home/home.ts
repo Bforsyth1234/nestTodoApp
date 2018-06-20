@@ -19,8 +19,6 @@ export class HomePage {
   }
 
   postTodo() {
-    console.log('this.todo = ');
-    console.log(this.todo);
     this.toDosProvider.postTodo(this.todo);
   }
 
