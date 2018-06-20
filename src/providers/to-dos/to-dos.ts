@@ -22,7 +22,7 @@ export class ToDosProvider {
   }
 
   postTodo(data) {
-    this.http.get(this.url, data).subscribe(res => {
+    this.http.post(this.url, data).subscribe(res => {
       console.log('res = ');
       console.log(res);
     }
