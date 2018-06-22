@@ -7,8 +7,9 @@ export class TodoController {
   constructor(private todoService: TodoService) {}
   @Get()
   findAll() {
-    return {title: 'test title', description: 'test item'};
+    return this.todoService.findAll();
   }
+
   @Post()
   async create(@Body() createTodoDto: CreateTodoDto) {
     this.todoService.create(createTodoDto);
