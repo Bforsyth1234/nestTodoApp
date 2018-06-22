@@ -1,6 +1,6 @@
 import { TodoService } from './todo.service';
 import { CreateTodoDto } from './CreateTodoDto';
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Req } from '@nestjs/common';
 
 @Controller('todo')
 export class TodoController {
@@ -12,6 +12,8 @@ export class TodoController {
 
   @Post()
   async create(@Body() createTodoDto: CreateTodoDto) {
-    this.todoService.create(createTodoDto);
+    this.todoService.create(createTodoDto).then(() => {
+      return 'New To do added';
+    });
   }
 }
