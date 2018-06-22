@@ -12,4 +12,8 @@ export class TodoService {
     return await createdTodo.save();
   }
 
+  async findAll(): Promise<TodoInterface[]> {
+    return await this.todoModel.find().exec();
+  }
+
 }
