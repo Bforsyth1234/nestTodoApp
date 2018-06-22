@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { TodoModel } from '../../models/todo.model';
 
 /*
   Generated class for the ToDosProvider provider.
@@ -21,7 +22,12 @@ export class ToDosProvider {
     });
   }
 
-  postTodo(data) {
+  postTodo(title, description) {
+    let data: TodoModel = {
+      title: title,
+      description: description,
+      complete: false
+    }
     this.http.post(this.url, data).subscribe(res => {
       console.log('res = ');
       console.log(res);
