@@ -11,15 +11,27 @@ export class HomePage {
     title: 'test',
     description: 'desc test'
   };
+  showInputs = false;
 
   constructor(public navCtrl: NavController, public toDosProvider: ToDosProvider) {
     this.toDosProvider.getTodos();
-    this.postTodo()
-
   }
 
   postTodo() {
     this.toDosProvider.postTodo(this.todo);
+  }
+
+  showInputFields() {
+    this.showInputs =  true;
+  }
+
+  close() {
+    this.showInputs = false;
+  }
+
+  save() {
+    console.log('save clicked');
+    this.showInputs = false;
   }
 
 }
