@@ -7,7 +7,7 @@ export class TodoController {
   constructor(private todoService: TodoService) {}
   @Get()
   findAll() {
-    return {title: 'test title', description: 'test item'};
+    return {title: 'test title', description: 'test item', complete: false};
   }
   @Post()
   async create(@Body() createTodoDto: CreateTodoDto) {
