@@ -17,7 +17,6 @@ export class HomePage {
 
   postTodo() {
     this.todo.complete = false;
-    this.toDosProvider.postTodo(this.todo);
   }
 
   showInputFields() {
