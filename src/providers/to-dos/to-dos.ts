@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TodoModel } from '../../models/todo.model';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the ToDosProvider provider.
@@ -15,11 +17,8 @@ export class ToDosProvider {
     console.log('Hello ToDosProvider Provider');
   }
 
-  getTodos() {
-    this.http.get(this.url).subscribe((data) => {
-      console.log('data = ');
-      console.log(data);
-    });
+  getTodos(): Observable<any> {
+    return this.http.get(this.url);
   }
 
   postTodo(title, description) {
